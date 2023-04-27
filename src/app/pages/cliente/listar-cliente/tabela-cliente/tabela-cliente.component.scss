@@ -1,0 +1,26 @@
+@import "../../../../core/colors.scss";
+.icon-acoes {
+  font-size: 1.3rem;
+}
+
+.delete {
+  cursor: pointer;
+}
+
+.tabela {
+  background: $primary-light !important;
+  color: $secondary;
+  border-radius: 50px;
+}
+
+.titulo-tabela {
+  color: $secondary;
+}
+
+tr:nth-child(even) {
+  background: #F7F7F7
+}
+
+tr:nth-child(odd) {
+  background: #FFFFFF
+}

@@ -1,0 +1,34 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav">
+    <mat-toolbar class="toolbarMenuDrawerTopo">
+      <a class="brand" routerLink="/">
+        <img class="logo" src="/assets/img/image.png" alt="Empresa xyz" />
+      </a>
+    </mat-toolbar>
+    <mat-divider class="divisor"></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/">
+        <i class="material-icons" title="Home">
+          home
+        </i>
+      </a>
+      <a mat-list-item routerLink="/clientes">
+        <i class="material-icons" title="Cadastro de clientes">
+          group
+        </i>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <mat-toolbar class="toolbar">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon" class="icon-menu">menu</mat-icon>
+      </button>
+      <span class="texto-titulo" routerLink="/clientes">Empresa <a>xyz</a></span>
+    </mat-toolbar>
+    <div class="corpo-principal">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

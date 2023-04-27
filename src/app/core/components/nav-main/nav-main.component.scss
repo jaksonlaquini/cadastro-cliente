@@ -1,0 +1,83 @@
+@import "../../colors.scss";
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 85px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}
+
+.divisor {
+  margin-top: 2em;
+}
+
+mat-nav-list {
+  margin-top: 1em;
+}
+
+mat-nav-list a {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.corpo-principal {
+  margin: 2rem;
+  margin-bottom: 5rem;
+}
+
+.sidenav a {
+  color: #FFF;
+}
+
+.toolbar {
+  background: $primary;
+  color: $secondary;
+  position: fixed;
+  top: 0;
+  z-index: 999999;
+}
+
+.content {
+  top: 50px;
+  background-color: #FFF;
+}
+
+.toolbarMenuDrawerTopo {
+  background: none;
+}
+.brand, .links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand img {
+  width: 55px;
+  border: 2px solid #00586F;
+  margin-top: 28px;
+  border-radius: 50px;
+}
+
+.brand h2 {
+  transition: .4s;
+}
+
+.brand:hover > h2 {
+  color: $secondary;
+}
+
+.texto-titulo {
+  color: $secondary;
+  cursor: pointer;
+}
+
+.texto-titulo a {
+  font-size: 12px;
+  color: $secondary;
+}
+
+.icon-menu {
+  color: $secondary;
+}

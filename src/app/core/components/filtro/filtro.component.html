@@ -1,0 +1,25 @@
+<mat-form-field appearance="outline" class="input-filtro campos-texto">
+  <mat-label>Nome cliente</mat-label>
+  <input matInput type="text" placeholder="Informe um nome" [(ngModel)]="filtro.nome" />
+</mat-form-field>
+
+<mat-form-field appearance="outline" class="input-filtro campos-texto">
+  <mat-label>CPF</mat-label>
+  <input matInput type="text" placeholder="Informe o CPF" [(ngModel)]="filtro.cpf" maxlength="11"
+    pattern="999.999.999-99" />
+</mat-form-field>
+
+<mat-form-field appearance="outline" class="input-filtro campo-dataNascimento">
+  <mat-label>Data Nascimento</mat-label>
+  <input placeholder="Informe a data de nascimento" [(ngModel)]="filtro.dataNascimento" matInput
+    (click)="dataNasc.open()" (keydown)="(false)" [matDatepicker]="dataNasc" />
+  <mat-datepicker-toggle matSuffix *ngIf="filtro.dataNascimento" (click)="limparDataNascimento()">
+    <mat-icon matDatepickerToggleIcon>clear</mat-icon>
+  </mat-datepicker-toggle>
+  <mat-datepicker-toggle matSuffix [for]="dataNasc"></mat-datepicker-toggle>
+  <mat-datepicker #dataNasc></mat-datepicker>
+</mat-form-field>
+
+<button mat-icon-button class="btn-search" (click)="pesquisar()">
+  <mat-icon aria-label="Side nav toggle icon">search</mat-icon>
+</button>

@@ -1,0 +1,37 @@
+p {
+  line-height: 2;
+  font-size: 1rem;
+}
+
+.div-action {
+  text-align: center;
+  margin-top: 2em;
+  width: 100%;
+  justify-content: center;
+}
+
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 60px 0px 60px 60px;
+  height: 22em;
+  width: 27em;
+}
+
+.titulo-modal {
+  color: #00586F;
+  text-align: center;
+  margin-top: 1em;
+  font-weight: bolder;
+}
+
+.texto-modal {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.texto-modal p {
+  color: #00586F;
+  font-size: 12px;
+  line-height: 4;
+  font-weight: bold;
+}

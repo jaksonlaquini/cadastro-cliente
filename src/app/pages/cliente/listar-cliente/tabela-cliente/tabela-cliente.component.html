@@ -1,0 +1,46 @@
+<div>
+  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef><label class="titulo-tabela">NOME CLIENTE</label></th>
+      <td mat-cell *matCellDef="let row">{{row.nome}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="cpf">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef><label class="titulo-tabela">CPF</label></th>
+      <td mat-cell *matCellDef="let row">{{row.cpf}}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="dataCadastro">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef><label class="titulo-tabela">DATA CADASTRO</label></th>
+      <td mat-cell *matCellDef="let row"> {{row.dataCadastro | date : 'dd/MM/yyyy HH:mm'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="rendaMensal">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef><label class="titulo-tabela">RENDA MENSAL</label>
+      </th>
+      <td mat-cell *matCellDef="let row">{{row.rendaMensal | currency: 'R$'}}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="acoes" class="col-acoes">
+      <th mat-header-cell *matHeaderCellDef class="col-acoes"><label class="titulo-tabela">AÇÕES</label></th>
+      <td mat-cell *matCellDef="let row">
+        <a routerLink="/cliente/atualizar/{{ row.id }}" class="edit">
+          <i class="material-icons icon-acoes">
+            edit
+          </i>
+        </a>
+        <a (click)="openDialogRemoverCliente(row.id)" class="delete">
+          <i class="material-icons icon-acoes">
+            delete
+          </i>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="tabela"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-divider></mat-divider>
+</div>

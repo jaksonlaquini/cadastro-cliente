@@ -1,0 +1,45 @@
+p {
+  line-height: 2;
+  font-size: 1rem;
+}
+
+.div-action {
+  text-align: center;
+    margin-top: 0em;
+    width: 100%;
+    justify-content: center;
+}
+
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 60px 0px 60px 60px;
+  height: 22em;
+  width: 27em;
+}
+
+
+.texto-modal {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.texto-modal p {
+  color: #00586F;
+  font-size: 12px;
+  line-height: 4;
+  font-weight: bold;
+}
+
+.icon-check {
+  color: #73D852;
+  font-size: 45px;
+  width: 1.5em;
+  height: 1em;
+}
+
+.icon-error {
+  color: #E6173E;
+  font-size: 45px;
+  width: 1.5em;
+  height: 1em;
+}

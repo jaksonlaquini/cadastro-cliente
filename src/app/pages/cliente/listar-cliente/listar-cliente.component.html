@@ -1,0 +1,15 @@
+<mat-card>
+  <div>
+    <mat-card-title class="titulo-principal titulo-cliente">Clientes</mat-card-title>
+    <app-filtro (filtrarCliente)="filtrar($event)"></app-filtro>
+    <button class="btn btn-primary" (click)="navigateToClienteNovo()">
+      Adicionar Cliente
+    </button>
+  </div>
+  <br><br>
+  <mat-divider class="mt"></mat-divider>
+  <app-tabela-cliente [dataSource]="dataSource" (atualizarTabela)="recarregarTabela()"> </app-tabela-cliente>
+  <mat-paginator showFirstLastButtons #paginator (page)="changePage($event)" [length]="total" [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 20]">
+  </mat-paginator>
+</mat-card>

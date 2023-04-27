@@ -1,0 +1,70 @@
+<form (ngSubmit)="submit()" [formGroup]="clienteForm" #formDir="ngForm">
+
+  <mat-form-field appearance="outline">
+    <mat-label>Nome cliente</mat-label>
+    <input matInput type="text" [(ngModel)]="cliente.nome" placeholder="Informe um nome" required
+      formControlName="nome" />
+    <mat-error *ngIf="!!clienteForm.get('nome')?.touched && !!clienteForm.get('nome')?.getError('required')">O
+      nome do
+      cliente é
+      obrigatório.</mat-error>
+    <mat-error
+      *ngIf="!!clienteForm.get('nome')?.touched && !!clienteForm.get('nome')?.getError('sobrenomeNaoInformado')">É
+      Nome Cliente deve possuir ao menos um sobrenome.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>CPF</mat-label>
+    <input matInput type="text" [(ngModel)]="cliente.cpf" placeholder="Informe o CPF" required formControlName="cpf"
+      [maxlength]="11" />
+    <mat-error *ngIf="!!clienteForm.get('cpf')?.touched && !!clienteForm.get('cpf')?.getError('required')">O CPF é
+      obrigatório.</mat-error>
+    <mat-error *ngIf="!!clienteForm.get('cpf')?.touched && clienteForm.get('cpf')?.getError('cpfInvalido')">CPF deve ser
+      válido.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Data Nascimento</mat-label>
+    <input placeholder="Informe a data de nascimento" [(ngModel)]="cliente.dataNascimento"
+      formControlName="dataNascimento" matInput (click)="dataNasc.open()" (keydown)="(false)"
+      [matDatepicker]="dataNasc" />
+    <mat-datepicker-toggle *ngIf="cliente.dataNascimento" matSuffix (click)="limparDataNascimento()">
+      <mat-icon matDatepickerToggleIcon>clear</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker-toggle matSuffix [for]="dataNasc"></mat-datepicker-toggle>
+    <mat-datepicker #dataNasc></mat-datepicker>
+    <mat-error
+      *ngIf="!!clienteForm.get('dataNascimento')?.touched && !!clienteForm.get('dataNascimento')?.getError('required')">A
+      data de nascimento é
+      obrigatório.</mat-error>
+    <mat-error
+      *ngIf="!!clienteForm.get('dataNascimento')?.touched && clienteForm.get('dataNascimento')?.getError('idadeInvalida')">Cliente
+      deve possuir mais de 18 anos e menos de 60</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Renda mensal</mat-label>
+    <input matInput type="number" placeholder="Informe uma renda" [(ngModel)]="cliente.rendaMensal" required
+      formControlName="rendaMensal" />
+    <mat-error
+      *ngIf="!!clienteForm.get('rendaMensal')?.touched && !!clienteForm.get('rendaMensal')?.getError('required')">A
+      renda mensal é
+      obrigatório.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput type="text" placeholder="Informe um email" [(ngModel)]="cliente.email" required
+      formControlName="email" email="true" />
+    <mat-error *ngIf="!!clienteForm.get('email')?.touched && !!clienteForm.get('email')?.getError('email')">Email
+      não é válido.</mat-error>
+    <mat-error *ngIf="!!clienteForm.get('email')?.touched && !!clienteForm.get('email')?.getError('required')">O
+      email é obrigatório.</mat-error>
+  </mat-form-field>
+
+  <div class="example-form-fields">
+    <button type="button" *ngIf="editar" (click)="limparFormulario()" class="btn btn-primary">Limpar</button>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+  </div>
+
+</form>

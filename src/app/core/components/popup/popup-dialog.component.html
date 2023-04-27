@@ -1,0 +1,11 @@
+<div mat-dialog-content class="texto-modal">
+  <mat-icon *ngIf="!data.error" aria-label="Side nav toggle icon" class="icon-check">check_circle_outline</mat-icon>
+  <mat-icon *ngIf="data.error" aria-label="Side nav toggle icon" class="icon-error">error_outline</mat-icon>
+  <p *ngIf="!data.mensagemHtml">{{data.mensagem}}</p>
+  <p *ngIf="!!data.mensagemHtml" [innerHtml]="data.mensagem"></p>
+</div>
+<div mat-dialog-actions class="div-action">
+  <button [mat-dialog-close]="true" cdkFocusInitial class="btn btn-primary">
+    Ok
+  </button>
+</div>
