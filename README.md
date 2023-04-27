@@ -4,7 +4,7 @@ Executar projeto
  - rode 
      - npm i
      - npm start
-     - json-server db.json
+     - json-server db.json (verifique se está rodando na porta 3000)
    
 
 
