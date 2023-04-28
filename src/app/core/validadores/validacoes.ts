@@ -4,7 +4,7 @@ export class Validacoes {
   static ValidarSobrenomeInformado(controle: AbstractControl) {
     const nome = controle.value;
     const nomeSplit = !!nome
-      ? (nome.split(' ') as string[]).filter((x) => x.length > 1)
+      ? (nome.split(' ') as string[]).filter((x) => !!x)
       : [];
 
     return !!nomeSplit && nomeSplit.length == 1
