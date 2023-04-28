@@ -1,10 +1,15 @@
 @import "../../../../core/colors.scss";
 .icon-acoes {
   font-size: 1.3rem;
+  padding-left: 2px;
 }
 
 .delete {
   cursor: pointer;
+}
+
+.icon-acoes:hover {
+  color:  $gray4 !important;
 }
 
 .tabela {
