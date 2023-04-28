@@ -4,8 +4,9 @@ Executar projeto
  - rode 
      - npm i
      - npm start
-     - json-server db.json
+     - npm run server ou json-server db.json (verifique se está rodando na porta 3000)
    
+- versão node utilizada - v18.14.2
 
 
 
